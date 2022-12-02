@@ -2,23 +2,19 @@
 const newDeck = [
     {
         name : 'hA',
-        weight1 : 11,
-        weight2 : 1,
+        weight : 11,
     },
     {
         name : 'dA',
-        weight1 : 11,
-        weight2 : 1,
+        weight : 11,
     },
     {
         name : 'sA',
-        weight1 : 11,
-        weight2 : 1,
+        weight : 11,
     },
     {
         name : 'cA',
-        weight1 : 11,
-        weight2 : 1,
+        weight : 11,
     },
     {
         name : 'hK',
@@ -197,7 +193,7 @@ const newDeck = [
         weight : 3,
     },
     {
-        name : 'ch02',
+        name : 'h02',
         weight : 2,
     },
     {
@@ -212,9 +208,52 @@ const newDeck = [
         name : 'c02',
         weight : 2,
     },
-]
-console.log(newDeck.length);
+];
+
+
+
 /*----- app's state (variables) -----*/
+let grabDeck = newDeck;
+let playerHand = [];
+let houseHand = [];
 /*----- cached element references -----*/
 /*----- event listeners -----*/
 /*----- functions -----*/
+/* function which switches the last object in the array with a random object, then removes the last object from the function*/
+function shuffle(array){
+    let currentIndex = array.length, randomIndex;
+    while  (currentIndex != 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+}
+function deal(hand){
+    let card = grabDeck.pop();
+    hand.push(card);
+}
+/*function which adds together the weights of an array, then checks for aces to give aces different values if necessary*/
+function addHand(array){
+    let handWeight = array.map(({name : letters, weight : value}) => (value));
+    let sum = handWeight.reduce((acc, num) => acc + num);
+    return sum;
+    // let handNames = array.map(({name : letters, weight : value}) => (letters));
+    // let checkForAce = handNames.some(() => 'dA' || 'hA' || 'sA' || 'cA');
+    // let numAces = handNames.filter(name => (name === 'dA' || 'hA' || 'sA' || 'cA'));
+    //     while (sum>21){
+    //         if ((checkForAce === true) && (numAces.length = 1)){
+    //             let
+
+    //         }
+    //     }
+}
+shuffle(grabDeck);
+deal(playerHand);
+deal(playerHand);
+let sumHand = addHand(playerHand);
+console.log(sumHand);
+
+
+
+
