@@ -8,16 +8,63 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Blackjack</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="card-deck-css/css/cardstarter.css">
+        <link href='https://fonts.googleapis.com/css?family=DM Serif Text' rel='stylesheet'>
+        <script src="js/main.js" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <h1>this is the content of the page</h1>
-        <script src="js/main.js" async defer></script>
+
+        <img class= "blackjack" src="./toppng.com-01-logo-blackjack-black-blackjackhtml5-thumbnail-blackjack-702x421.png" alt="Blackjack">
+        <div class="container" id="bttn1">
+        <button class="button button1" type="button">
+            Play
+        </button>
+        </div>
+        <div class="hidden" id="bttn4">
+            <button class="button button4" type="button">
+                Deal
+            </button>
+        </div>
+        <div class="hidden" id="bttn2">
+            <button class="button button2" type="button">
+                Hit Me
+            </button>
+        </div>
+        <div class="hidden" id="bttn3">
+            <button class="button button3" type="button">
+                Stand
+            </button>
+        </div>
+        <div class="hidden" id="bttn5">
+            <button class="button button5" type="button">
+                Play Again
+            </button>
+        </div>
+        <div class="hidden" id="blackjackWin">
+            <h1>
+                Blackjack
+            </h1>
+            <p>
+                You Win!
+            </p>
+        </div>
+        <div class="hidden" id="push">
+            <h1></h1>
+            <p>
+                Push
+            </p>
+        </div>
+        <div class="hidden" id="houseBlackjack">
+            <h1>
+                House Made Blackjack
+            </h1>
+            <p>
+                You Lose
+            </p>
+        </div>
+        
     </body>
 </html>
