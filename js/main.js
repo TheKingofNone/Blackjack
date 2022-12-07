@@ -1,223 +1,218 @@
-/*----- constants -----*/
+
 const newDeck = [
     {
-        name : 'hA',
+        name :'hearts-A',
         weight : 11,
     },
     {
-        name : 'dA',
+        name :'diamonds-A',
         weight : 11,
     },
     {
-        name : 'sA',
+        name :'spades-A',
         weight : 11,
     },
     {
-        name : 'cA',
+        name :'clubs-A',
         weight : 11,
     },
     {
-        name : 'hK',
+        name :'hearts-K',
         weight : 10,
     },
     {
-        name : 'dK',
+        name :'diamonds-K',
         weight : 10,
     },
     {
-        name : 'sK',
+        name :'spades-K',
         weight : 10,
     },
     {
-        name : 'cK',
+        name :'clubs-K',
         weight : 10,
     },
     {
-        name : 'hQ',
+        name :'hearts-Q',
         weight : 10,
     },
     {
-        name : 'dQ',
+        name :'diamonds-Q',
         weight : 10,
     },
     {
-        name : 'sQ',
+        name :'spades-Q',
         weight : 10,
     },
     {
-        name : 'hJ',
+        name :'hearts-J',
         weight : 10,
     },
     {
-        name : 'dJ',
+        name :'diamonds-J',
         weight : 10,
     },
     {
-        name : 'sJ',
+        name :'spades-J',
         weight : 10,
     },
     {
-        name : 'cJ',
+        name :'clubs-J',
         weight : 10,
     },
     {
-        name : 'cQ',
+        name :'clubs-Q',
         weight : 10,
     },
     {
-        name : 'h10',
+        name :'hearts-r10',
         weight : 10,
     },
     {
-        name : 'd10',
+        name :'diamonds-r10',
         weight : 10,
     },
     {
-        name : 's10',
+        name :'spades-r10',
         weight : 10,
     },
     {
-        name : 'c10',
+        name :'clubs-r10',
         weight : 10,
     },
     {
-        name : 'h09',
+        name :'hearts-r09',
         weight : 9,
     },
     {
-        name : 'd09',
+        name :'diamonds-r09',
         weight : 9,
     },
     {
-        name : 's09',
+        name :'spades-r09',
         weight : 9,
     },
     {
-        name : 'c09',
+        name :'clubs-r09',
         weight : 9,
     },
     {
-        name : 'd08',
+        name :'diamonds-r08',
         weight : 8,
     },
     {
-        name : 'h08',
+        name :'hearts-r08',
         weight : 8,
     },
     {
-        name : 's08',
+        name :'spades-r08',
         weight : 8,
     },
     {
-        name : 'c08',
+        name :'clubs-r08',
         weight : 8,
     },
     {
-        name : 'h07',
+        name :'hearts-r07',
         weight : 7,
     },
     {
-        name : 'd07',
+        name :'diamonds-r07',
         weight : 7,
     },
     {
-        name : 's07',
+        name :'spades-r07',
         weight : 7,
     },
     {
-        name : 'c07',
+        name :'clubs-r07',
         weight : 7,
     },
     {
-        name : 'h06',
+        name :'hearts-r06',
         weight : 6,
     },
     {
-        name : 'd06',
+        name :'diamonds-r06',
         weight : 6,
     },
     {
-        name : 's06',
+        name :'spades-r06',
         weight : 6,
     },
     {
-        name : 'c06',
+        name :'clubs-r06',
         weight : 6,
     },
     {
-        name : 'd05',
+        name :'diamonds-r05',
         weight : 5,
     },
     {
-        name : 'h05',
+        name :'hearts-r05',
         weight : 5,
     },
     {
-        name : 's05',
+        name :'spades-r05',
         weight : 5,
     },
     {
-        name : 'c05',
+        name :'clubs-r05',
         weight : 5,
     },
     {
-        name : 'd04',
+        name :'diamonds-r04',
         weight : 4,
     },
     {
-        name : 'h04',
+        name :'hearts-r04',
         weight : 4,
     },
     {
-        name : 's04',
+        name :'spades-r04',
         weight : 4,
     },
     {
-        name : 'c04',
+        name :'clubs-r04',
         weight : 4,
     },
     {
-        name : 'h03',
+        name :'hearts-r03',
         weight : 3,
     },
     {
-        name : 'd03',
+        name :'diamonds-r03',
         weight : 3,
     },
     {
-        name : 's03',
+        name :'spades-r03',
         weight : 9,
     },
     {
-        name : 'c03',
+        name :'clubs-r03',
         weight : 3,
     },
     {
-        name : 'h02',
+        name :'hearts-r02',
         weight : 2,
     },
     {
-        name : 'd02',
+        name :'diamonds-r02',
         weight : 2,
     },
     {
-        name : 's02',
+        name :'spades-r02',
         weight : 2,
     },
     {
-        name : 'c02',
+        name :'clubs-r02',
         weight : 2,
     },
 ];
 
-
-
-/*----- app's state (variables) -----*/
 let grabDeck = newDeck;
 let playerHand = [];
 let houseHand = [];
-/*----- cached element references -----*/
-/*----- event listeners -----*/
 
 $(document).ready(function(){
     $("#bttn1").click(function(){
@@ -230,18 +225,19 @@ $("#bttn4").click(function(){
     grabDeck = [...newDeck];
     playerHand = [];
     houseHand = [];
-    console.log(grabDeck);
     startingDeal();
 });
 $("#bttn2").click(function(){
      deal(playerHand);
-     console.log(playerHand);
+     $("#playerHand").empty();
+     makePlayerCards(playerHand);
      let sum1 = addHand(playerHand);
-     console.log(sum1);
      if ((sum1 > 21) === true){
         hideHitStand();
         $("#bttn5").removeClass("hidden").addClass("container");
-        console.log(sum1 + ", You Bust");
+        $("#" + houseHand[0].name).attr("src", "./card-deck-css/images/backs/" + houseHand[0].name + ".svg");
+        $("#results").append("Player- " + sum1);
+        youBust();
     };
 });
 $("#bttn3").click(function(){
@@ -250,36 +246,42 @@ $("#bttn3").click(function(){
     while (sum2 < 17){
         deal(houseHand);
         sum2 = addHand(houseHand);
+        $("#houseHand").empty();
+        makeHouseCards(houseHand);
     }
-    console.log(sum2);
     if ((sum2 > 21) === true){
+        $("#" + houseHand[0].name).attr("src", "./card-deck-css/images/backs/" + houseHand[0].name + ".svg");
         hideHitStand();
         $("#bttn5").removeClass("hidden").addClass("container");
-        console.log("house busts you win");
+        $("#results").append("House Busts");
+        youWin();
      }
      else{
+        $("#" + houseHand[0].name).attr("src", "./card-deck-css/images/backs/" + houseHand[0].name + ".svg");
         hideHitStand();
-        console.log("player- " + sum1 + " house- " + sum2);
         if ((sum1 > sum2) === true){
-           console.log("you win");
+            $("#results").append("House - " + sum2 + "    Player - " + sum1);
+           youWin();
         }
         else if((sum2 > sum1) === true){
-            console.log("you lose");
+            $("#results").append("House - " + sum2 + "    Player - " + sum1);
+            youLose();
         }
         else{
-            console.log("Push");
+            $("#results").append("House - " + sum2 + "    Player - " + sum1);
+            youPush();
         };
         $("#bttn5").removeClass("hidden").addClass("container");
     }
 });
 $("#bttn5").click(function(){
-    // grabDeck = null;
-    // playerHand = null;
-    // houseHand = null;
     $("#bttn5").removeClass("container").addClass("hidden");
     $("#bttn4").removeClass("hidden").addClass("container");
+    $("#playerHand").empty();
+    $("#houseHand").empty();
+    $("#results").empty();
+    $("#outcome").empty();
 })
-/*----- functions -----*/
 /* function which switches the last object in the array with a random object, then removes the last object from the function*/
 function shuffle(array){
     let currentIndex = array.length, randomIndex;
@@ -293,6 +295,31 @@ function shuffle(array){
 function deal(hand){
     let card = grabDeck.pop();
     hand.push(card);
+    }
+function makePlayerCards(hand){
+    for (i=0; i<hand.length; i++){
+        $("#playerHand").append("<img src='./card-deck-css/images/backs/" + hand[i].name + ".svg' id='" + hand[i].name + "'>");
+        $("#" + hand[i].name).addClass("card large");
+    }
+}
+function makeHouseCards(hand){
+    for (i=0; i<hand.length; i++){
+        $("#houseHand").append("<img src='./card-deck-css/images/backs/" + hand[i].name + ".svg' id='" + hand[i].name + "'>");
+        $("#" + hand[i].name).addClass("card large");
+    }
+    $("#" + hand[0].name).attr("src", "./card-deck-css/images/backs/red.svg")
+}
+function youWin(){
+    $("#outcome").append("You Win!");
+}
+function youBust(){
+    $("#outcome").append("You Bust");
+}
+function youLose(){
+    $("#outcome").append("You Lose");
+}
+function youPush(){
+    $("#outcome").append("Push");
 }
 function startingDeal(){
     $("#bttn2, #bttn3").removeClass("hidden").addClass("container");
@@ -301,44 +328,39 @@ function startingDeal(){
         deal(houseHand);
         deal(playerHand);
         deal(houseHand);
-        console.log(playerHand);
-        console.log(houseHand);
+        makeHouseCards(houseHand);
+        makePlayerCards(playerHand);
         let sum1 = addHand(playerHand);
         let sum2 = addHand(houseHand);
         if (sum1 === 21 && sum2 != 21){
             hideHitStand();
             $("#bttn5, #blackjackWin").removeClass("hidden").addClass("container");
-            console.log("Blackjack-- You Win!");
+            $("#" + houseHand[0].name).attr("src", "./card-deck-css/images/backs/" + houseHand[0].name + ".svg");
+            $("#results").append("Blackjack!");
+            youWin();
         }
         else if (sum1 === 21 && sum2 === 21){
             hideHitStand();
             $("#bttn5, #push").removeClass("hidden").addClass("container");
-            console.log("Player and House Made Blackjack, Push");
+            $("#" + houseHand[0].name).attr("src", "./card-deck-css/images/backs/" + houseHand[0].name + ".svg");
+            $("#results").append("Player and House made Blackjack");
+            youPush();
         }
         else if (sum1 != 21 && sum2 === 21){
             hideHitStand();
             $("#bttn5, #houseBlackjack").removeClass("hidden").addClass("container");
-            console.log("House Made Blackjack, You Lose");
+            $("#" + houseHand[0].name).attr("src", "./card-deck-css/images/backs/" + houseHand[0].name + ".svg");
+            $("#results").append("House made Blackjack");
+            youLose();
         }
 }
 function hideHitStand(){
     $("#bttn2, #bttn3").removeClass("container").addClass("hidden");
 }
-/*function which adds together the weights of an array, then checks for aces to give aces different values if necessary*/
 function addHand(array){
     let handWeight = array.map(({name : letters, weight : value}) => (value));
     let sum = handWeight.reduce((acc, num) => acc + num);
     return sum;
-    // let handNames = array.map(({name : letters, weight : value}) => (letters));
-    // let checkForAce = handNames.some(() => 'dA' || 'hA' || 'sA' || 'cA');
-    //     while (sum>21){
-    //         if ((checkForAce === true) && (numAces.length = 1)){
-    //             let
-
-    //         }
-    //     }
 }
-
-
 
 

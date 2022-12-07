@@ -48,8 +48,34 @@ body {
     background-color:#972a27;
     bottom: 24px;
 }
-#blackjackWin {
+#playerHand {
+    display: flex;
+    justify-content: center;
+}
+#houseHand {
+    display: flex;
+    justify-content: center;
+}
+#results {
+    display: block;
+    position: absolute;
     text-align: center;
+    color: whitesmoke;
     font-family: 'DM Serif Text';
-    color: white;
+    font-size: 24px;
+    bottom: 170px;
+}
+#outcome {
+    display: block;
+    position: absolute;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'DM Serif Text';
+    font-size: 32px;
+    font-weight: bold;
+    bottom: 122px;
+}
+.resultsText {
+    display: flex;
+    justify-content: center;
 }
