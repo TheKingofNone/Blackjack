@@ -1,4 +1,4 @@
-# 💲💲 Project 1: Blackjack 💲💲
+# 💲💲 Blackjack 💲💲
 
 An easy-to-play browser game of blackjack, also known as 21. Try to get as close to 21 as you can without going over, while making sure your total is higher than the dealer! Number cards are worth face value, face cards (J Q K) are worth 10, and Aces are worth 11.
 
