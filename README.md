@@ -17,7 +17,7 @@ An easy-to-play browser game of blackjack, also known as 21. Try to get as close
 
 ## Demo
 
-Click to play: https://thekingofnone.github.io/Project-1-Blackjack/
+Click to play: https://thekingofnone.github.io/Blackjack/
 
 
 ## Roadmap
